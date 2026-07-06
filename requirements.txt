@@ -1,0 +1,14 @@
+# Requires Python 3.10+ (mcp SDK). On EC2: python3.11 -m venv .venv
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+anthropic>=0.42.0
+google-genai>=1.0.0
+mcp>=1.9.0,<2
+httpx>=0.28.0
+python-dotenv>=1.0.0
+aiosqlite>=0.20.0
+pydantic>=2.10.0
+pydantic-settings>=2.6.0
+pytest>=8.3.0
+pytest-asyncio>=0.24.0
+Pillow>=11.0.0

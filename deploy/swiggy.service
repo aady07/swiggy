@@ -1,0 +1,19 @@
+[Unit]
+Description=Swiggy Household Grocery Agent (FastAPI + frontend)
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/swiggy
+EnvironmentFile=/home/ec2-user/swiggy/.env
+ExecStart=/home/ec2-user/swiggy/.venv/bin/uvicorn backend.main:app --host 127.0.0.1 --port 8083 --workers 1
+Restart=on-failure
+RestartSec=5
+
+# SQLite + OAuth tokens live under the app dir
+ReadWritePaths=/home/ec2-user/swiggy
+
+[Install]
+WantedBy=multi-user.target
